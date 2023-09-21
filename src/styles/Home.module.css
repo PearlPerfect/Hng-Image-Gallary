@@ -1,9 +1,9 @@
-.typingText{
+/* .typingText{
   display: flex;
   justify-content: center;
   align-items: center;
   background: #0c4a6e;
-}
+} */
 .text{
   color: #ece403;
   position: relative;
@@ -50,8 +50,9 @@
   padding: 20px;
   border-radius: 8px;
   width:300px;
-  box-shadow: 0px 0px 10px rgba(233, 137, 3, 0.5);
+
   text-align: center;
+  color: #0c4a6e;
 }
 
 .formGroup {
@@ -103,7 +104,7 @@ color:#0c4a6e ;}
 
 
 .toggleButton:hover {
-  color: #054588; }
+  color: #940562cb; }
 
 .error {
   color: rgb(213, 13, 13);
