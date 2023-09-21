@@ -23,33 +23,33 @@ export default function Home() {
         await createUserWithEmailAndPassword(auth, email, password);
         router.push('/gallery')
         console.log('Sign-up successful');
-        setSuccessMessage('Sign-up successful'); 
+        setSuccessMessage('Congratulation!! Sign-up successful '); 
 
       } else {
         await signInWithEmailAndPassword(auth, email, password);
         router.push('/gallery')
 
         console.log('Sign-in successful');
-        setSuccessMessage('Sign-in successful');
+        setSuccessMessage('Congratulation!! Proceed to gallary');
 
       }
     } catch (error) {
       if (error.code === 'invalid-login-credentials') {
-        setError('Invalid email or password');
+        setError('**Invalid email or password**');
       }  else if (error.code === 'auth/email-already-in-use') {
-        setError('Email is already in use. Please use a different email address.');
+        setError('**Email is already in use. Use a different email address.**');
       } 
       else if (error.code === 'auth/invalid-email') {
-        setError('Invalid email format. Please enter a valid email address.');
+        setError('** Invalid email format. Enter a valid email address.** ');
       }
         else if(error.code === 'auth/invalid-login-credentials'){
-          setError('invalid login credentials');
+          setError('** invalid login credentials** ');
         }
       else if(error.code =='auth/weak-password'){
-        setError('Weak-Password:Password should be at least 6 characters')
+        setError('** Weak-Password:Password should be at least 6 characters** ')
       }
       else if(error.code === 'auth/network-request-failed') {
-        setError('Network error. Please check your internet connection.');
+        setError('** Network error. Check your internet connection.** ');
       }
       else {
         setError(error.message);
@@ -68,8 +68,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+    
      < CssBaseline/>
      <div  className={styles.container}>
+     <div className={styles.typingText}>
+      <h1 className={styles.text}>Hello And Welcome </h1>
+    </div>
+   
       
      
       <div className={styles.form}>
@@ -82,7 +87,7 @@ export default function Home() {
             <input
               type="email"
               value={email}
-              placeholder='email'
+              placeholder='Enter your email'
               onChange={(e) => setEmail(e.target.value)}
               required
             />
@@ -93,6 +98,7 @@ export default function Home() {
             
               type="password"
               value={password}
+              placeholder='Enter Your Password'
               onChange={(e) => setPassword(e.target.value)}
               required
               
@@ -109,7 +115,7 @@ export default function Home() {
               )}
           </button>
         </form>
-        <p>
+        <p className={styles.options}>
           {isSignUp
             ? "Already have an account? "
             : "Don't have an account? "}

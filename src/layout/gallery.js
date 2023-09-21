@@ -6,9 +6,9 @@ import img from '../image/images-1.jpeg'
 import img1 from '../image/fitness.jpeg'
 import img2 from '../image/fright.jpeg'
 import img3 from '../image/image-10.jpg'
-import img4 from '../image/food.jpeg'
-import img5 from '../image/fr.jpeg'
-import img6 from '../image/images-4.jpeg'
+import img4 from '../image/Family dinner.webp'
+import img5 from '../image/fr.jpg'
+import img6 from '../image/Food1.webp'
 import img7 from '../image/image-9.jpeg'
 import img8 from '../image/image-8.jpeg'
 import img9 from '../image/image-7.jpeg'
@@ -17,17 +17,19 @@ import img11 from '../image/image-5.jpg'
 import img12 from '../image/image-3.jpg'
 import img13 from '../image/image-20.jpeg'
 import img14 from '../image/image-2.jpeg'
-import img15 from '../image/image-16.jpeg'
+import img15 from '../image/Foot-ball.jpeg'
 import img16 from '../image/image-19.jpeg'
 import img17 from '../image/image-18.jpeg'
 import img18 from '../image/image-17.jpeg'
-import img19 from '../image/image-16.jpeg'
+import img19 from '../image/handball.webp'
 import img20 from '../image/image-15.jpeg'
 import img21 from '../image/image-14.jpeg'
 import img22 from '../image/image-13.webp'
 import img23 from '../image/image-12.jpeg'
 import img24 from '../image/image-11.jpeg'
 import img25 from '../image/image-10.jpg'
+import img26 from '../image/VolleyBall.webp'
+import img27 from '../image/work.webp'
 
 import AppBar from './appbar'
 import Image from 'next/image'
@@ -51,7 +53,7 @@ const images = [
       {
         id: 4,
         img: img4,
-        tag: 'Food',
+        tag: 'Family dinner',
       },
       {
         id: 5,
@@ -100,7 +102,7 @@ const images = [
       }, {
         id: 15,
         img: img15,
-        tag: 'Family',
+        tag: 'Sport- Football',
       },
       {
         id: 16,
@@ -120,7 +122,7 @@ const images = [
       {
         id: 19,
         img: img19,
-        tag: 'Family',
+        tag: 'Sport- Handball',
       },
       {
         id: 20,
@@ -150,8 +152,31 @@ const images = [
         img: img24,
         tag: 'Art',
       },
+
+      {
+        id: 25,
+        img: img6,
+        tag: 'food',
+      },
       
-  
+      {
+        id: 26,
+        img: img26,
+        tag: 'Sport- Volleyball',
+      },
+      
+      {
+        id: 27,
+        img: img25,
+        tag: 'Vegetables',
+      },
+      
+      {
+        id: 28,
+        img: img27,
+        tag: 'Office',
+      },
+      
   ];
 export default function ImageGallery({ searchQuery }) {
   const [imagesLoaded, setImagesLoaded] = useState(false);
@@ -253,8 +278,8 @@ export default function ImageGallery({ searchQuery }) {
   
   }, []);
   return (
-    <div style={{ overflowY: 'scroll', height: '100vh' }}>
-<Grid container spacing={2} rowSpacing={5} columnSpacing={5} ref={gridContainerRef} sx={{padding:'32px',marginTop:"10px"}} >
+    <div style={{ overflowY: 'scroll', height: '100vh', background: '#0c4a6e' }}>
+<Grid container spacing={2} rowSpacing={2} columnSpacing={2} ref={gridContainerRef} sx={{padding:'32px',marginTop:"2rem"}} >
       {imageData.map((image) => (
         <Grid
           item
@@ -280,7 +305,7 @@ export default function ImageGallery({ searchQuery }) {
           sx={{
               background: '#FFFFF',
               border: '1.2px solid #DADDDB',
-              borderRadius: '8px',
+              borderRadius: '10px',
               px: '3px',
               position: 'relative',
               transform: draggedImage === image ? 'scale(1.05)' : 'scale(1)', 
@@ -288,13 +313,13 @@ export default function ImageGallery({ searchQuery }) {
             }}
           >
             {imagesLoaded ? (
-              <Box height="200px" position="relative" sx={{ objectFit: 'cover', margin: '5px' }}>
+              <Box height="250px" position="relative" sx={{ objectFit: 'cover', margin: '5px' }}>
                 <Image src={image.img} layout="fill" objectFit="cover" alt="project_card" />
               </Box>
             ) : (
               <Skeleton variant="rectangular" width={500} height={200} />
             )}
-            <Typography variant="h6" sx={{textAlign:"center"}}>{image.tag}</Typography>
+            <Typography variant="h6" sx={{textAlign:"center", color:'#0c4a6e', fontStyle:'italic', fontWeight:'700'}}>{image.tag}</Typography>
           </Card>
         </div>
       </Grid>
