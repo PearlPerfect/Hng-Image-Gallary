@@ -70,9 +70,10 @@
 .formGroup input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 3px solid #0c4a6e;
   border-radius: 4px;
   font-size: 16px;
+  outline: none;
 }
 
 .submitButton {
