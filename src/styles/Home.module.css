@@ -108,13 +108,17 @@ color:#0c4a6e ;}
   color: #940562cb; }
 
 .error {
-  color: rgb(213, 13, 13);
+  color: 	#d50d0d;
   margin-top: 10px;
+  font-weight: 700;
+  font-style: italic;
 }
 
 .success {
-  color: rgb(22, 201, 22);
+  color: #228B22;
   margin-top: 10px;
+  font-weight: 700;
+  font-style: italic;
 }
 
 @media screen and (max-width: 600px) {
